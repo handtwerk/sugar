@@ -2,6 +2,8 @@ package com.orm;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -166,6 +168,21 @@ public class SugarRecord<T> {
                     } else {
                         field.set(this, null);
                     }
+                } else if (Enum.class.isAssignableFrom(field.getType())) {
+
+                    try {
+
+                        Method valueOf = field.getType().getMethod("valueOf", String.class);
+                        String strVal = cursor.getString(cursor.getColumnIndex(colName));
+                        Object enumVal = valueOf.invoke(field.getType(), strVal);
+                        field.set(this, enumVal);
+
+                    } catch (Exception e) {
+
+                        Log.e("Sugar", "Enum cannot be read from Sqlite3 database. Please check the type of field "
+                                + field.getName());
+                    }
+
                 } else {
                     Log.e("Sugar", "Class cannot be read from Sqlite3 database. Please check the type of field "
                             + field.getName());
@@ -200,7 +217,7 @@ public class SugarRecord<T> {
 
         Field[] fields = getClass().getDeclaredFields();
         for (Field field : fields) {
-            if (!field.isAnnotationPresent(Ignore.class)) {
+            if (!field.isAnnotationPresent(Ignore.class) && !Modifier.isStatic(field.getModifiers())) {
                 typeFields.add(field);
             }
         }
