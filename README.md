@@ -1,4 +1,4 @@
-This library is a wrapper on android's db interface for SQLLite.. It is built for #in50hrs competition.
+This is a fork of [Satyan's Sugar](https://github.com/satyan/sugar), a wrapper for Android's DB interface for SQLite.
 
 ## Current State
 
@@ -54,4 +54,4 @@ Example project:
 Note Manager
 https://github.com/satyan/SugarExample
 
-Please visit the wiki section for more details.
+Please visit [the Wiki section of the original Sugar project](https://github.com/satyan/sugar/wiki) for more details.
