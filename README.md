@@ -1,5 +1,8 @@
+## Please note
 
-*Please note:* This fork of sugar will not be developed any further, since [greenDAO](https://github.com/greenrobot/greenDAO) is a much, much better object-relational mapping framework for Android.
+This fork of sugar will not be developed any further, since [greenDAO](https://github.com/greenrobot/greenDAO) is a much, much better object-relational mapping framework for Android.
+
+## About
 
 This is a fork of [Satyan's Sugar](https://github.com/satyan/sugar), a wrapper for Android's DB interface for SQLite, fixing some problems with the original library and adding support for `Enum-type` fields.
 
