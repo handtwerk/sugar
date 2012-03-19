@@ -1,6 +1,6 @@
 ## Please note
 
-This fork of sugar will not be developed any further, since [greenDAO](https://github.com/greenrobot/greenDAO) is a much, much better object-relational mapping framework for Android.
+_This fork of sugar will not be developed any further, since [greenDAO](https://github.com/greenrobot/greenDAO) is a much, much better object-relational mapping framework for Android._
 
 ## About
 
