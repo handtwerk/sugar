@@ -15,7 +15,7 @@ public class SugarApp extends android.app.Application {
         }
 
         super.onCreate();
-        this.database = new Database(this);
+        this.database = new Database(this, "sugar-db");
     }
 
     @Override

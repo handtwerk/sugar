@@ -1,6 +1,5 @@
 package com.orm;
 
-import static com.orm.SugarConfig.getDatabaseName;
 import static com.orm.SugarConfig.getDatabaseVersion;
 import static com.orm.SugarConfig.getDebugEnabled;
 
@@ -21,11 +20,9 @@ import dalvik.system.DexFile;
 public class SugarDb extends SQLiteOpenHelper {
     private Context context;
 
-    public SugarDb(Context context) {
-        super(context, getDatabaseName(context), new SugarCursorFactory(getDebugEnabled(context)),
-                getDatabaseVersion(context));
+    public SugarDb(Context context, String pName) {
+        super(context, pName, new SugarCursorFactory(getDebugEnabled(context)), getDatabaseVersion(context));
         this.context = context;
-
     }
 
     private static <T extends SugarRecord> List<T> getDomainClasses(Context context) {

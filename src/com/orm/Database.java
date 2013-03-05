@@ -10,8 +10,8 @@ public class Database {
 
     private SQLiteDatabase sqLiteDatabase;
 
-    public Database(Context context) {
-        this.sugarDb = new SugarDb(context);
+    public Database(Context context, String pName) {
+        this.sugarDb = new SugarDb(context, pName);
     }
 
     public SQLiteDatabase openDB() {

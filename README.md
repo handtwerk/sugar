@@ -1,4 +1,4 @@
-This is a fork of [Satyan's Sugar](https://github.com/satyan/sugar), a wrapper for Android's DB interface for SQLite, fixing some problems with the original library and adding support for `Enum-type` fields.
+This is a fork of [Satyan's Sugar](https://github.com/satyan/sugar), a wrapper for Android's DB interface for SQLite, fixing some problems with the original library and adding support for `Enum`-type fields.
 
 ## Without Sugar
 
