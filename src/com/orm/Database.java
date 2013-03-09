@@ -6,11 +6,11 @@ import android.util.Log;
 
 public class Database {
 
-    private SugarDb        sugarDb;
+    private final SugarDb  sugarDb;
 
     private SQLiteDatabase sqLiteDatabase;
 
-    public Database(Context context, String pName) {
+    public Database(final Context context, final String pName) {
         this.sugarDb = new SugarDb(context, pName);
     }
 
@@ -23,9 +23,9 @@ public class Database {
     }
 
     public void closeDB() {
-        if (this.sqLiteDatabase != null) {
-            this.sqLiteDatabase.close();
-            this.sqLiteDatabase = null;
-        }
+        // if (this.sqLiteDatabase != null) {
+        // this.sqLiteDatabase.close();
+        // this.sqLiteDatabase = null;
+        // }
     }
 }
